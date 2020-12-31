@@ -14,9 +14,6 @@ int LED_STATE = 0;
 
 #define SERIAL_CZESTOTLIWOSC 115200
 
-#define LED_DANE 2
-#define LED_ILOSC 180
-
 #define ID_CHOINKA "Christmas lights"
 
 // Zainicjowanie bibliotek
@@ -262,7 +259,7 @@ void loop() {
 void WIFI_LACZENIE() {
   WiFi.mode(WIFI_STA);
 
-  Serial.printf("[WIFI] LACZE SIE Z %s ", WIFI_SSID);
+  Serial.printf("[Wi-Fi] LACZE SIE Z %s ", WIFI_SSID);
   WiFi.begin(WIFI_SSID, WIFI_PASS);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -272,7 +269,7 @@ void WIFI_LACZENIE() {
 
   Serial.println();
 
-  Serial.printf("[WIFI] POLACZONO!, SSID: %s, Adres IP: %s\n", WiFi.SSID().c_str(), WiFi.localIP().toString().c_str());
+  Serial.printf("[Wi-Fi] POLACZONO!, SSID: %s, Adres IP: %s\n", WiFi.SSID().c_str(), WiFi.localIP().toString().c_str());
 
 }
 

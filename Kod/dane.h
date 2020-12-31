@@ -1,2 +1,5 @@
-#define WIFI_SSID "MISZCZAK_WIFI"
-#define WIFI_PASS "miszczak2020"
+#define WIFI_SSID "ssid"
+#define WIFI_PASS "pass"
+
+#define LED_DANE 2
+#define LED_ILOSC 180
