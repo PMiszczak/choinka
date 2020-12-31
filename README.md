@@ -28,19 +28,7 @@ Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom 
 
 Część fizyczna opiera się o 3 główne moduły połączone razem: zasilacz, mikrokontroler oraz pasek LED.
 
-```mermaid
-graph LR
-
-Zasilacz --- |Zwora| Zasilacz
-Zasilacz --> |Zasilanie +5Vsb| Mikrokontroler
-Zasilacz --> |Zasilanie +5V| Złącza[Złącza MR60]
-
-subgraph Obudowa
-Mikrokontroler --> |DATA| Złącza[Złącza MR60]
-end
-
-Złącza[Złącza MR60] x-x LED[Pasek LED]
-```
+[![graph LR Zasilacz --- |Zwora| Zasilacz Zasilacz --> |Zasilanie +5Vsb| Mikrokontroler Zasilacz --> |Zasilanie +5V| Złącza[Złącza MR60] subgraph Obudowa Mikrokontroler --> |DATA| Złącza[Złącza MR60] end Złącza[Złącza MR60] --> LED[Pasek LED]](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcblxuICAgIFphc2lsYWN6IC0tLSB8WndvcmF8IFphc2lsYWN6XG4gICAgWmFzaWxhY3ogLS0-IHxaYXNpbGFuaWUgKzVWc2J8IE1pa3Jva29udHJvbGVyXG4gICAgWmFzaWxhY3ogLS0-IHxaYXNpbGFuaWUgKzVWfCBaxYLEhWN6YVtaxYLEhWN6YSBNUjYwXVxuXG4gICAgc3ViZ3JhcGggT2J1ZG93YVxuICAgIE1pa3Jva29udHJvbGVyIC0tPiB8REFUQXwgWsWCxIVjemFbWsWCxIVjemEgTVI2MF1cbiAgICBlbmRcblxuICAgIFrFgsSFY3phW1rFgsSFY3phIE1SNjBdIC0tPiBMRURbUGFzZWsgTEVEXSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcblxuICAgIFphc2lsYWN6IC0tLSB8WndvcmF8IFphc2lsYWN6XG4gICAgWmFzaWxhY3ogLS0-IHxaYXNpbGFuaWUgKzVWc2J8IE1pa3Jva29udHJvbGVyXG4gICAgWmFzaWxhY3ogLS0-IHxaYXNpbGFuaWUgKzVWfCBaxYLEhWN6YVtaxYLEhWN6YSBNUjYwXVxuXG4gICAgc3ViZ3JhcGggT2J1ZG93YVxuICAgIE1pa3Jva29udHJvbGVyIC0tPiB8REFUQXwgWsWCxIVjemFbWsWCxIVjemEgTVI2MF1cbiAgICBlbmRcblxuICAgIFrFgsSFY3phW1rFgsSFY3phIE1SNjBdIC0tPiBMRURbUGFzZWsgTEVEXSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 
 ### Zasilacz
 
