@@ -6,7 +6,7 @@
 
 <hr>
 
-„CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” jest projektem przygotowywanym przez Pawła Miszczaka na potrzeby każdego, kto chciałby mieć światełka choinkowe (lub niechoinkowe) sterowane inteligentną asystentką - Alexą.
+„CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” to projekt przygotowywany przez Pawełka Miszczaka na potrzeby każdego, kto chciałby mieć światełka choinkowe (lub niechoinkowe) sterowane inteligentną asystentką - Alexą.
 
 <br>
 <div align="center">
@@ -16,11 +16,11 @@
 
 # Na jaką potrzebę odpowiada moje rozwiązanie?
 
-„CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” jest projektem stworzonym czysto dla celów edukacyjnych oraz dla walorów estetycznych tego projektu. Dzięki stworzeniu lampek choinkowych (lub niechoinkowych) z zastosowaniem technologii IoT użytkownik jest w stanie włączać, wyłączać oraz zmieniać animacje tworzone przez lampki za pomocą inteligentnego asystenta - Alexy.
+„CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” jest projektem stworzonym czysto dla celów edukacyjnych oraz dla walorów estetycznych. Dzięki stworzeniu lampek choinkowych (lub niechoinkowych) z zastosowaniem technologii IoT użytkownik jest w stanie włączać, wyłączać, a także zmieniać animacje tworzone przez lampki za pomocą inteligentnego asystenta - Alexy.
 
 # Opis działania mojego projektu
 
-Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” można podzielić na 2 główne części. Część fizyczną oraz część programistyczną.
+Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” można podzielić na dwie główne części: fizyczną oraz  programistyczną.
 
 <hr>
 
@@ -44,27 +44,27 @@ Złącza[Złącza MR60] x-x LED[Pasek LED]
 
 ### Zasilacz
 
-Zasilacz użyty do projektu jest zwykłym zasilaczem komputerowym (ATX) o mocy $300\text{ }[W]$. Zasilacz jest potrzeby do zasilenia projektu. Ze względu na pasek LED, który zasilany musi być w tym przypadku napięciem $5\text{ }[V]$ dużym wyzwaniem na początku było dobranie odpowiedniego zasilacza.
+Zasilacz użyty do projektu jest zwykłym zasilaczem komputerowym (ATX) o mocy **300 [W]**. Jest potrzeby do dostarczenia energii do projektu. Ze względu na pasek LED, który zasilany musi być w tym przypadku napięciem **5 [V]** na samym początku dobranie odpowiedniego zasilacza było sporym wyzwaniem.
 
-Pasek LED, który został zakupiony do projektu, jest paskiem inteligentnych sterowników LED ze wbudowanymi źródłami światła WS2812B na czarnym elastycznym PCB. W tym przypadku na każdy metr paska przypada 60 modułów. Długość paska, która została zakupiona to 3 metry.
+Pasek LED, który został zakupiony do projektu, jest paskiem inteligentnych sterowników LED ze wbudowanymi źródłami światła WS2812B na czarnym elastycznym PCB. W tym przypadku na każdy metr paska przypada 60 modułów. Długość paska jaka została zakupiona to 3 metry.
 
-$60 \cdot 3 = 180 \larr$ ilość modułów LED.
+![60 \cdot 3 = 180](https://render.githubusercontent.com/render/math?math=60%20\cdot%203%20=%20180) - ilość modułów LED.
 
-Powołując się na dokumentację modułów WS2812B oraz opis sprzedawcy, moc pojedynczego modułu wynosi $\approx 0,3\text{ }[W]$.
+Powołując się na dokumentację modułów WS2812B oraz opis sprzedawcy, moc pojedynczego modułu wynosi **≈ 0,3 [W]**.
 
-$180 \cdot 0,3\text{ }[W] = 54\text{ }[W] \larr$ moc całkowita paska LED.
+![180 \cdot 0.3\text{ }[W] = 54\text{ }[W]](https://render.githubusercontent.com/render/math?math=180%20\cdot%200.3\text{%20}[W]%20=%2054\text{%20}[W]) - moc całkowita paska LED.
 
-Znając te wartości oraz to, że napięcie modułów to $5\text{ }[V]$ możemy obliczyć prąd potrzebny do zasilenia paska LED ze wzoru na moc.
+Znając te wartości oraz to, że napięcie modułów jest równe **5 [V]** możemy obliczyć prąd potrzebny do zasilenia paska LED ze wzoru na moc.
 
-$P = U \cdot I \rarr I = \frac{P}{U}$
+![P = U \cdot I \rightarrow I = \frac{P}{U}](https://render.githubusercontent.com/render/math?math=P%20=%20U%20\cdot%20I%20\rightarrow%20I%20=%20\frac{P}{U})
 
-I = $\frac{54\text{ }[W]}{5\text{ }[V]}$ = 10.8$\text{ }[A] \larr$ prąd całkowity paska LED.
+![I = \frac{54\text{ }[W]}{5\text{ }[V]} = 10.8\text{ }[A]](https://render.githubusercontent.com/render/math?math=I%20=%20\frac{54\text{%20}[W]}{5\text{%20}[V]}%20=%2010.8\text{%20}[A]) - prąd całkowity paska LED.
 
-Przyjmując straty, niedokładności modułów oraz zasilenie samego mikrokontrolera możemy spodziewać się szczytowego poboru prądu w wysokości ok. $12\text{ }[A]$.
+Przyjmując straty, niedokładności modułów oraz zasilenie samego mikrokontrolera możemy spodziewać się szczytowego poboru prądu w wysokości ok. **12 [A]**.
 
-Zasilacze o napięciu $5\text{ }[V]$, które będą w stanie wytworzyć tak wysoki prąd, są rzadkie oraz drogie. Z tego powodu w projekcie został użyty zasilacz komputerowy (ATX), który jest idealny do takich zastosowań. Na naklejce na zasilaczu możemy przeczytać, że linia $+5\text{ }V$ może wytworzyć nawet $25\text{ }[A]$. W dodatku w zasilaczu występuje linia $+5\text{ }V_{sb}$, która wytwarza $5\text{ }[V]$, lecz to napięcie jest przepuszczone przez stabilizator liniowy, który zapewnia bardzo dokładną wartość napięcia oraz zapewnia nas o tym, że na linii nie będzie tętnień prądu.
+Zasilacze o napięciu **5 [V]**, które będą w stanie wytworzyć tak wysoki prąd, są rzadkie oraz drogie. Z tego powodu w projekcie został użyty zasilacz komputerowy (ATX), który jest idealny do takich zastosowań. Na naklejce na zasilaczu możemy przeczytać, że linia **+5V** może wytworzyć nawet **25 [A]**. W dodatku w zasilaczu występuje linia **+5Vsb**, która wytwarza **5 [V]**, lecz to napięcie jest przepuszczone przez stabilizator liniowy, który zapewnia bardzo dokładną wartość napięcia oraz to, że na linii nie będzie tętnień prądu.
 
-Linia $+5\text{ }V_{sb}$ co prawda może dostarczyć tylko $2\text{ }[A]$ prądu, lecz jest to zupełnie wystarczająca wartość do zasilenia mikrokontrolera.
+Linia **+5Vsb** co prawda może dostarczyć tylko **2 [A]** prądu, lecz jest to zupełnie wystarczająca wartość do zasilenia mikrokontrolera.
 
 Do poprawnego działania zasilacz ATX potrzebuje zwartego pinu PS-ON z masą zasilacza.
 
@@ -74,11 +74,11 @@ Mikrokontroler użyty do projektu to NodeMCU. Jest on wyposażony we wbudowany m
 
 Mikrokontoler w projekcie steruje paskiem LED.
 
-Mikrokontoler jest zasilany z zasilacza linią $+5\text{ }V_{sb}$. Napięcie wchodzi na pin Vin, z którego następnie przechodzi na następny, wewnętrzny regulator liniowy NodeMCU.
+Mikrokontoler jest zasilany z zasilacza linią **+5Vsb**. Napięcie wchodzi na pin Vin, z którego następnie przechodzi na następny, wewnętrzny regulator liniowy NodeMCU.
 
 W całym projekcie wykorzystywany jest tylko jeden pin GPIO.
 
-Mimo braku wzmianki o tym w dokumentacji paska LED wiele stron i poradników zaleca użycie rezystora wpiętego szeregowo między mikrokontroler a pin DATA paska LED o wartości od $100 \Omega$ do $1000 \Omega$. W projekcie użyty został rezystor o wartości $230 \Omega$.
+Mimo braku wzmianki o tym w dokumentacji paska LED wiele stron i poradników zaleca użycie rezystora wpiętego szeregowo między mikrokontroler a pin DATA paska LED o wartości od **100 Ω** do **1000 Ω**. W projekcie użyty został rezystor o wartości **230 Ω**.
 
 ### Pasek LED
 
@@ -148,21 +148,25 @@ Plik „dane.h” jest bardzo prostym plikiem zawierającym 4 stałe.
 #define LED_ILOSC 180
 ```
 
-Dwie pierwsze stałe są loginem i hasłem dla mikrokontrolera do sieci Wi-Fi. Następne dwie stałe dotyczą paska LED. Stała LED_DANE określa, na którym pinie GPIO odbywa się komunikacja między mikrokontrolerem a paskiem LED. Natomiast stała LED_ILOSC informuje program o ilości modułów LED w użytym pasku.
+Dwie pierwsze stałe są loginem i hasłem dla mikrokontrolera do sieci Wi-Fi. Następne dwie stałe dotyczą paska LED. Stała LED_DANE określa, na którym pinie GPIO odbywa się komunikacja między mikrokontrolerem, a paskiem LED. Natomiast stała LED_ILOSC informuje program o ilości modułów LED w użytym pasku.
 
 # Filmy
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IX6Z9OP_zIc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels - Wersja 1.0.0](http://img.youtube.com/vi/IX6Z9OP_zIc/0.jpg)](http://www.youtube.com/watch?v=IX6Z9OP_zIc "CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels - Wersja 1.0.0")
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KIGAfvgpNOY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels - Wersja 2.0.0](http://img.youtube.com/vi/KIGAfvgpNOY/0.jpg)](http://www.youtube.com/watch?v=KIGAfvgpNOY "CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels - Wersja 2.0.0")
 
 # Jak widzę dalszy rozwój?
 
-Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” jest, jak już zostało wspomniane w rozdziale _Na jaką potrzebę odpowiada moje rozwiązanie?_ projektem stworzonym czysto dla celów edukacyjnych oraz dla walorów estetycznych tego projektu.
+Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” jest, jak już zostało wspomniane w rozdziale _Na jaką potrzebę odpowiada moje rozwiązanie?_ projektem stworzonym czysto dla celów edukacyjnych oraz dla walorów estetycznych.
 
-Oczywiście widzę przyszłość tego projektu szczególnie w sektorach bezpieczeństwa, niezawodności oraz mechaniki całego projektu, jednakże projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” na obecną chwilę działa oraz jest zgrabnie zabudowany w obudowę wydrukowaną w technologii druku 3D. Do projektu prowadzona jest także niniejsza dokumentacja oraz stworzone są dwa filmy przedstawiające wygląd i działanie projektu.
+Osobiście z pewnością widzę przyszłość tego projektu, szczególnie w sektorach bezpieczeństwa, niezawodności oraz mechaniki.
 
-Nie widzę sensu w bezgranicznym skupianiu uwagi tylko na tym projekcie, lecz postrzegam ten projekt jako coś, co bardzo dobrze nada się do pokazania młodszym, czy starszym uczniom szkół, aby zachęcić ich do dalszej nauki i podejmowania wyzwania dalszej nauki w szkołach technicznych oraz na politechnikach.
+Projekt „CHOINKA - Customizable House Ornaments Indicating North-Pole Kingdom Angels” na obecną chwilę działa oraz jest zgrabnie zabudowany w obudowę wydrukowaną w technologii druku 3D.
+
+Do projektu prowadzona jest także niniejsza dokumentacja oraz stworzone są dwa filmy przedstawiające jego wygląd oraz działanie.
+
+Nie widzę sensu w bezgranicznym skupianiu uwagi tylko na tym szczególnym projekcie, lecz postrzegam go jako coś, co bardzo dobrze nada się do pokazania młodszym, czy starszym uczniom szkół, aby zachęcić ich do dalszej nauki i podejmowania tego wyzwania w szkołach technicznych oraz na politechnikach.
 
 Projekt będzie dalej rozwijany, lecz w mniejszym tempie.
 
@@ -181,6 +185,6 @@ Projekt będzie dalej rozwijany, lecz w mniejszym tempie.
 
 # Licencja
 
-Projekt działa na licencji GNU (General Public License), co oznacza, że projekt może być uruchamiany, kopiowany, rozpowszechniany, analizowany oraz zmieniany i poprawiany przez użytkowników.
+Projekt działa na licencji GNU (General Public License), co oznacza, że może być uruchamiany, kopiowany, rozpowszechniany, analizowany oraz zmieniany i poprawiany przez użytkowników.
 
 **GNU** General Public License [(GPL)](https://www.gnu.org/licenses/gpl-3.0.html)
